@@ -1,0 +1,20 @@
+{
+    "version": {
+        "2.54.0": {
+            "ubuntu": {
+                "detect": {
+                    "method": "run_script",
+                    "script": "detect_ubuntu.sh"
+                },
+                "install": {
+                    "method": "run_script",
+                    "script": "install_2.54.0_ubuntu.sh"
+                },
+                "uninstall": {
+                    "method": "run_script",
+                    "script": "uninstall_2.54.0_ubuntu.sh"
+                }
+            }
+        }
+    }
+}
