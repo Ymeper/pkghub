@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
-    tags:
-      - 'v*'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -25,10 +26,15 @@ jobs:
         run: |
           uv run --with msgpack scripts/json_to_msgpack.py
       
+      - name: Get version tag
+        id: version
+        run: echo "tag=$(date +v%Y.%m.%d)-${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+      
       - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: "Release ${{ steps.version.outputs.tag }}"
           files: |
             pkghub.msgpack
           generate_release_notes: true
