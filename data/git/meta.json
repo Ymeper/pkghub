@@ -1,0 +1,10 @@
+{
+    "name": "git",
+    "desc": {
+        "en": "Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+        "zh": "Git 是一个分布式版本控制系统，旨在以快速和高效的方式处理从小型到非常大型的项目。"
+    },
+    "homepage": "https://git-scm.com/",
+    "license": "GPL-2.0",
+    "icon": "https://git-scm.com//images/logos/downloads/Git-Icon-1788C.png"
+}
